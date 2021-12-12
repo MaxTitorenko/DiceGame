@@ -42,13 +42,29 @@ startBtn.addEventListener("click", function(event){
     event.preventDefault()
     player1Name = document.getElementById("player1Nickname").value
     player2Name = document.getElementById("player2Nickname").value
+
     totalWinsNeeded = document.getElementById("totalWins").value
+    if(totalWinsNeeded == "" || totalWinsNeeded == 0){
+        totalWinsNeeded = 1
+    }
+
     console.log(player1Name)
     console.log(player2Name)
     console.log(totalWinsNeeded)
     startModal.style.display = "none"
+
     name1.textContent = player1Name
+    if(player1Name == "" || player1Name == " "){
+        player1Name = "Player 1"
+        name1.textContent = "Player 1"
+    }
+
     name2.textContent = player2Name
+    if(player2Name == "" || player2Name == " "){
+        player2Name = "Player 2"
+        name2.textContent = "Player 2"
+    }
+
     anouncer.textContent = `${player1Name}'s move`
 })
 
